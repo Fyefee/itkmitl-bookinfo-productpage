@@ -15,8 +15,14 @@ python productpage.py 9080
 # Build Docker Image for product page
 docker build -t productpage .
 
-# Run ratings service on port 8081
+# Run product page service on port 8081
 docker run -d --name productpage -p 8083:8083 productpage
+```
+
+## How to run with Docker Compose
+
+```bash
+docker-compose up -d
 ```
 
 ``` 
