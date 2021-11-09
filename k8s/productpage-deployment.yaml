@@ -19,5 +19,12 @@ spec:
       - name: bookinfo-dev-productpage
         image: ghcr.io/fyefee/bookinfo-productpage:dev
         imagePullPolicy: Always
+        env:
+          - name: REVIEWS_HOSTNAME
+            value: http://bookinfo-dev-reviews:8082
+          - name: RATINGS_HOSTNAME
+            value: http://bookinfo-dev-ratings:8080
+          - name: DETAILS_HOSTNAME
+            value: http://bookinfo-dev-details:8081
       imagePullSecrets:
       - name: registry-bookinfo
