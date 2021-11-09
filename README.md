@@ -28,3 +28,10 @@ docker-compose up -d
 ``` 
 You can test with path '/' or '/index.html'
 ```
+
+## How to run with Kubernetes
+
+```bash
+# Create deployment resource
+kubectl apply -f k8s/
+```

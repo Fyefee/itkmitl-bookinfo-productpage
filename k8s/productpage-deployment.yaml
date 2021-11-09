@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookinfo-dev-productpage
+  namespace: student19-bookinfo-dev
+  labels:
+    app: bookinfo-dev-productpage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookinfo-dev-productpage
+  template:
+    metadata:
+      labels:
+        app: bookinfo-dev-productpage
+    spec:
+      containers:
+      - name: bookinfo-dev-productpage
+        image: ghcr.io/fyefee/bookinfo-productpage:dev
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: registry-bookinfo
